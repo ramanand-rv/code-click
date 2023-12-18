@@ -16,12 +16,21 @@ import 'ace-builds/src-noconflict/mode-c_cpp';
 import 'ace-builds/src-noconflict/mode-ruby';
 import 'ace-builds/src-noconflict/mode-php';
 import 'ace-builds/src-noconflict/mode-rust';
-import 'ace-builds/src-noconflict/mode-swift';
-import 'ace-builds/src-noconflict/mode-kotlin';
 import 'ace-builds/src-noconflict/mode-html';
 import 'ace-builds/src-noconflict/mode-css';
-import 'ace-builds/src-noconflict/ext-language_tools';
+import 'ace-builds/src-noconflict/mode-json';
+import 'ace-builds/src-noconflict/mode-csharp';
+import 'ace-builds/src-noconflict/mode-xml';
 
+
+interface CodeEditorProps{
+    onCodeChange: (code: string) => void;
+    language: string;
+    theme: string;
+    icon: string;
+    background?: string;
+    currentPadding?: string;
+}
 const CodeEditor = () => {
     return (
         <Resizable minHeight={466} minWidth={510} maxWidth={1000}>
@@ -37,8 +46,9 @@ const CodeEditor = () => {
                         }
                     }"
                     name="UNIQUE_ID_OF_DIV"
-                    theme="monokai"
-                    mode="javascript"
+                    theme={'monokai'}
+                    mode={'javascript'}
+                    enableBasicAutocompletion={true}
                     fontSize={16}
                     wrapEnabled={true}
                     showPrintMargin={false}
