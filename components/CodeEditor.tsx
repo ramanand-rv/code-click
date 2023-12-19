@@ -56,7 +56,18 @@ const CodeEditor = ({ onCodeChange, language, theme, icon, background, currentPa
             onResize={handleResize}
             className="resize-container relative bg-red-700"
         >
-            <div className="ace-editor">
+            <div className="code-block">
+                <div className="code-ttile h-[52px] px-4 flex items-center justify-between bg-black bg-opacity-90">
+                    <div className="dots flex items-center gap-1">
+                        <div className="w-3 h-3 rounded-full bg-inherit bg-[#ff5656]"></div>
+                        <div className="w-3 h-3 rounded-full bg-inherit bg-[#ffbc6a]"></div>
+                        <div className="w-3 h-3 rounded-full bg-inherit bg-[#67f772]"></div>
+                    </div>
+                    <div className="input-control w-full ">
+                        <input type="text" name="" id=""
+                        className="w-full text-[hlsa(0, 0%, 100%, 0.6)] outline-none font-medium text-center bg-transparent" />
+                    </div>
+                </div>
                 <AceEditor
                     value="function () {
                         const life = 'undefined';
