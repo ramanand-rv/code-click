@@ -54,7 +54,7 @@ const CodeEditor = ({ onCodeChange, language, theme, icon, background, currentPa
     return (
         <Resizable minHeight={466} minWidth={510} maxWidth={1000} defaultSize={{ width: width, height: height || 500 }}
             onResize={handleResize}
-            className="resize-container relative bg-red-700"
+            className="resize-container relative"
         >
             <div className="code-block">
                 <div className="code-ttile h-[52px] px-4 flex items-center justify-between bg-black bg-opacity-90">
@@ -66,6 +66,9 @@ const CodeEditor = ({ onCodeChange, language, theme, icon, background, currentPa
                     <div className="input-control w-full ">
                         <input type="text" name="" id=""
                         className="w-full text-[hlsa(0, 0%, 100%, 0.6)] outline-none font-medium text-center bg-transparent" />
+                    </div>
+                    <div className="icon flex justify-center items-center p-1 bg-black bg-opacity-50 rounded-sm">
+                        <img src={icon} alt="icon" />
                     </div>
                 </div>
                 <AceEditor
