@@ -68,7 +68,7 @@ const CodeEditor = ({ onCodeChange, language, theme, icon, background, currentPa
                         className="w-full text-[hlsa(0, 0%, 100%, 0.6)] outline-none font-medium text-center bg-transparent" />
                     </div>
                     <div className="icon flex justify-center items-center p-1 bg-black bg-opacity-50 rounded-sm">
-                        <img src={icon} alt="icon" />
+                        <img src={icon} alt="icon" className="h-7 w-7" />
                     </div>
                 </div>
                 <AceEditor
