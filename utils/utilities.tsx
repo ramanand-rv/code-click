@@ -1,4 +1,4 @@
-export const languages =  [
+export const languages = [
     {
         name: 'Javascript',
         icon: '/icons/javascript.png',
@@ -47,4 +47,20 @@ export const languages =  [
         name: 'XML',
         icon: '/icons/xml2.png',
     },
-]
+];
+
+export const themes = [
+    'monokai',
+    'github',
+    'twilight',
+    'xcode',
+    'terminal',
+    'ambiance',
+    'chaos',
+    'clouds_midnight',
+    'crimson_editor',
+    'dracula',
+    'eclipse',
+    'tomorrow_night_blue',
+    'vibrant_ink',
+];
