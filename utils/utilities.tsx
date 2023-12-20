@@ -29,7 +29,7 @@ export const languages =  [
     },
     {
         name: 'Rust',
-        icon: '/icons/rust.png',
+        icon: '/icons/rust2.png',
     },
     {
         name: 'HTML',
@@ -41,10 +41,10 @@ export const languages =  [
     },
     {
         name: 'JSON',
-        icon: '/icons/json.png',
+        icon: '/icons/json2.png',
     },
     {
         name: 'XML',
-        icon: '/icons/xml.png',
+        icon: '/icons/xml2.png',
     },
 ]
