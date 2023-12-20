@@ -10,6 +10,14 @@ import 'ace-builds/src-noconflict/theme-github';
 import 'ace-builds/src-noconflict/theme-twilight';
 import 'ace-builds/src-noconflict/theme-xcode';
 import 'ace-builds/src-noconflict/theme-terminal';
+import 'ace-builds/src-noconflict/theme-ambiance'
+import 'ace-builds/src-noconflict/theme-chaos'
+import 'ace-builds/src-noconflict/theme-clouds_midnight'
+import 'ace-builds/src-noconflict/theme-crimson_editor'
+import 'ace-builds/src-noconflict/theme-dracula'
+import 'ace-builds/src-noconflict/theme-eclipse'
+import 'ace-builds/src-noconflict/theme-tomorrow_night_blue'
+import 'ace-builds/src-noconflict/theme-vibrant_ink'
 
 import 'ace-builds/src-noconflict/mode-javascript';
 import 'ace-builds/src-noconflict/mode-python';
@@ -23,6 +31,7 @@ import 'ace-builds/src-noconflict/mode-css';
 import 'ace-builds/src-noconflict/mode-json';
 import 'ace-builds/src-noconflict/mode-csharp';
 import 'ace-builds/src-noconflict/mode-xml';
+import { themes } from "@/utils/utilities";
 
 
 interface CodeEditorProps {
@@ -72,17 +81,15 @@ const CodeEditor = ({ onCodeChange, language, theme, icon, background, currentPa
                     </div>
                 </div>
                 <AceEditor
-                    value="function () {
-                        const life = 'undefined';
-                        let motivation = 'Keep coding!';
-
+                    value="
+                    function () {
                         while (life !== 'meaning') {
                             console.log(motivation);
                             motivation += ' and laugh along the way!';
                         }
                     }"
                     name="UNIQUE_ID_OF_DIV"
-                    theme={'monokai'}
+                    theme={theme}
                     mode={language.toLocaleLowerCase()}
                     enableBasicAutocompletion={true}
                     fontSize={16}
