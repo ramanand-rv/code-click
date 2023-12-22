@@ -9,7 +9,7 @@
     --textSoft: #b7bac1;
 }
 
-body{
+body {
     background-color: var(--bg);
     color: var(--textSoft);
 }
@@ -25,6 +25,8 @@ body{
 }
 
 .ace_editor {
+    background-color: #151c2c !important;
+    opacity: 100% !important;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     border-top: none;
@@ -39,14 +41,16 @@ body{
     width: 100% !important;
     top: 12px !important;
     left: 12px !important;
+
 }
 
 .ace_scroller {
     width: 100% !important;
 
+
 }
 
-.dropdown-title{
+.dropdown-title {
     padding: 0.25rem 0.3rem 0.3rem 0.5rem;
     height: 37px;
     border-radius: 3px;
@@ -57,7 +61,8 @@ body{
     font-size: 0.9rem;
     cursor: pointer;
 }
-.dropdown-menu{
+
+.dropdown-menu {
     padding: 0.25rem, 0.3rem, 0.3rem, 0.5rem;
     position: absolute;
     background-color: #121212;

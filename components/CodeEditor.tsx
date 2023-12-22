@@ -64,6 +64,9 @@ const CodeEditor = ({ onCodeChange, language, theme, icon, background, currentPa
         <Resizable minHeight={466} minWidth={510} maxWidth={1000} defaultSize={{ width: width, height: height || 500 }}
             onResize={handleResize}
             className="resize-container relative"
+            style={
+                { background: background }
+            }
         >
             <div className="code-block">
                 <div className="code-title h-[52px] px-4 flex items-center justify-between bg-black bg-opacity-90">

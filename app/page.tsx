@@ -36,6 +36,7 @@ export default function Home() {
           language={language}
           icon={activeIcon}
           theme={theme}
+          background={background}
         />
       </div>
     </main>
