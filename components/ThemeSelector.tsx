@@ -3,6 +3,7 @@
 import { themes } from '@/utils/utilities';
 import { ChevronDown } from 'lucide-react';
 import React from 'react'
+import OutsideClickHandler from 'react-outside-click-handler';
 
 interface ThemeSelectorProps {
     theme: string;
@@ -22,10 +23,11 @@ const ThemeSelector = ({ theme, setTheme }: ThemeSelectorProps) => {
         console.log(theme);
     }
     return (
-        <div className='theme-selector' onClick={toggleDropdown}>
+        <OutsideClickHandler onOutsideClick={()=>setShowDropdown(false)}>
+        <div className='theme-selector'>
             <p className="text-sm font-medium py-[5px] text-slate-300 overflow-hidden">Theme</p>
 
-            <div className=" p-1 dropdown-title capitalize w-[160px]">
+            <div onClick={toggleDropdown} className=" p-1 dropdown-title capitalize w-[160px]">
                 {theme}
                 <ChevronDown />
             </div>
@@ -45,6 +47,7 @@ const ThemeSelector = ({ theme, setTheme }: ThemeSelectorProps) => {
                 </div>
             }
         </div>
+        </OutsideClickHandler>
     )
 }
 
