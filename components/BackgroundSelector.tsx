@@ -3,6 +3,7 @@
 import { backgrounds } from '@/utils/utilities';
 import { ChevronDown } from 'lucide-react';
 import React from 'react'
+import OutsideClickHandler from'react-outside-click-handler';
 
 interface BackgroundSelectorProps {
     background: string;
@@ -21,6 +22,7 @@ const BackgroundSelector = ({ background, setBackground }: BackgroundSelectorPro
     }
 
     return (
+        <OutsideClickHandler onOutsideClick={()=>setShowDropdown(false)}>
         <div className='bg-selector relative'>
             <p className="text-sm font-medium py-[5px] text-slate-300 overflow-hidden">Background</p>
 
@@ -46,6 +48,7 @@ const BackgroundSelector = ({ background, setBackground }: BackgroundSelectorPro
                 </div>
             }
         </div>
+        </OutsideClickHandler>
     )
 }
 
