@@ -8,6 +8,7 @@ import ThemeSelector from '@/components/ThemeSelector';
 import BackgroundSelector from '@/components/BackgroundSelector';
 import PaddingSelector from '@/components/PaddingSelector';
 import { Download } from 'lucide-react';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   const [language, setLanguage] = useState(languages[0].name);
@@ -58,6 +59,7 @@ export default function Home() {
           
         />
       </div>
+      <Footer />
     </main>
   )
 }
