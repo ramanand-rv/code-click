@@ -24,6 +24,9 @@ export default function Home() {
   const exportPng =async () => {
     const editorElement = editorRef.current;
     if(editorElement){
+      // hidden elements
+      const handleElements = document.querySelectorAll('.handle');
+      handleElements.forEach((element: any) => element.style.display = 'none');
       const canvas = await html2canvas(editorElement);
       const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
 
@@ -31,6 +34,9 @@ export default function Home() {
       link.download = 'code-click.png';
       link.href = image;
       link.click();
+
+      // show elements
+      handleElements.forEach((element: any) => element.style.display = 'block');
     }
   };
   return (
