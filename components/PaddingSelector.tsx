@@ -24,8 +24,8 @@ const PaddingSelector = ({ paddings, currentPadding, setCurrentPadding }: Paddin
                         return (
                             <button key={i}
                             onClick={()=>handlePaddingChange(pad)}
-                            className={`h-9 flex items-center border-[1px] rounded border-slate-700 justify-center text-sm px-2
-                            ${currentPadding === pad && 'bg-slate-500  text-white'}`}>
+                                className={`h-9 flex cursor-pointer items-center border-[1px] hover:border-slate-500 duration-200 hover:text-white transition-all ease-linear rounded border-slate-700 hover:bg-slate-800  justify-center text-sm px-2
+                            ${currentPadding === pad && 'bg-slate-500   text-white'}`}>
                                     {pad}
                             </button>
                         )
