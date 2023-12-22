@@ -40,12 +40,12 @@ export default function Home() {
       </header>
       <div className="codeEditor mt-36 ">
         <CodeEditor
-          onCodeChange={(code) => console.log(code)}
           language={language}
           icon={activeIcon}
           theme={theme}
           background={background}
           currentPadding={currentPadding}
+          
         />
       </div>
     </main>
