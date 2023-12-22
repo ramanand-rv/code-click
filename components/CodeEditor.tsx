@@ -44,7 +44,7 @@ interface CodeEditorProps {
 }
 const CodeEditor = ({ onCodeChange, language, theme, icon, background, currentPadding }: CodeEditorProps) => {
     const [width, setWidth] = useState<string | number>(1000);
-    const [height, setHeight] = useState<string | number>(500);
+    const [height, setHeight] = useState<string | number>(590);
 
     // @ts-ignore
     const handleResize = (event, direction, ref, pos) => {
@@ -61,14 +61,20 @@ const CodeEditor = ({ onCodeChange, language, theme, icon, background, currentPa
         return () => window.removeEventListener('resize', updateSize);
     }, []);
     return (
-        <Resizable minHeight={466} minWidth={510} maxWidth={1000} defaultSize={{ width: width, height: height || 500 }}
+        <Resizable minHeight={590} minWidth={510} maxWidth={1000} defaultSize={{ width: width, height: height || 500 }}
             onResize={handleResize}
             className="resize-container relative"
             style={
                 { background: background }
             }
         >
-            <div className="code-block">
+            <div className="code-block"
+            style={
+                {
+                    padding: currentPadding,
+                    background: background
+                }
+            }>
                 <div className="code-title h-[52px] px-4 flex items-center justify-between bg-black bg-opacity-90">
                     <div className="dots flex items-center gap-2">
                         <div className="w-4 h-4 rounded-full bg-[#ff5656]"></div>
