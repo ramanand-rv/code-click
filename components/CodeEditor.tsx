@@ -69,7 +69,7 @@ const CodeEditor = ({ language, theme, icon, background, currentPadding }: CodeE
     const [title, setTitle] = useState<string>("Untitled-1");
     const [code, setCode] = useState(initialCode)
 
-    const handleCoideChange = (newCode: string) =>{
+    const handleCoideChange = (newCode: string) => {
         setCode(newCode);
     }
 
@@ -96,45 +96,52 @@ const CodeEditor = ({ language, theme, icon, background, currentPadding }: CodeE
             }
         >
             <div className="code-block"
-            style={
-                {
-                    padding: currentPadding,
-                    background: background
-                }
-            }>
-                <div className="code-title h-[52px] px-4 flex items-center justify-between bg-black bg-opacity-90">
-                    <div className="dots flex items-center gap-2">
-                        <div className="w-4 h-4 rounded-full bg-[#ff5656]"></div>
-                        <div className="w-4 h-4 rounded-full bg-[#ffbc6a]"></div>
-                        <div className="w-4 h-4 rounded-full bg-[#67f772]"></div>
-                    </div>
-                    <div className="input-control w-full ">
-                        <input type="text" placeholder="Title" 
-                        value={title} 
-                        onChange={(e) => setTitle(e.target.value)}
-                            className="w-full leading-loose text-[hlsa(0, 0%, 100%, 0.6)] outline-none font-medium text-center bg-transparent" />
-                    </div>
-                    <div className="icon flex justify-center items-center p-1 bg-black bg-opacity-50 rounded-sm">
-                        <img src={icon} alt="icon" className="h-8 w-8 rounded-md" />
-                    </div>
+                style={
+                    {
+                        padding: currentPadding,
+                    }
+                }>
+                    <div className="handle handle-top absolute left-1/2 top-[-4px] translate-x-[50%] w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-50"></div>
+
+                    <div className="handle handle-bottom absolute left-1/2 bottom-[-4px] translate-x-[50%] w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-50"></div>
+
+                    <div className="handle handle-left absolute top-1/2 left-[-4px] translate-y-[50%] w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-50"></div>
+
+                    <div className="handle handle-right absolute top-1/2 right-[-2px] translate-x-[50%] w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-50"></div>
+
+              <div className="code-title h-[52px] px-4 flex items-center justify-between bg-black bg-opacity-90">
+                <div className="dots flex items-center gap-2">
+                    <div className="w-4 h-4 rounded-full bg-[#ff5656]"></div>
+                    <div className="w-4 h-4 rounded-full bg-[#ffbc6a]"></div>
+                    <div className="w-4 h-4 rounded-full bg-[#67f772]"></div>
                 </div>
-                <AceEditor
-                    value={code}
-                    name="UNIQUE_ID_OF_DIV"
-                    theme={theme}
-                    mode={language.toLocaleLowerCase()}
-                    enableBasicAutocompletion={true}
-                    fontSize={16}
-                    height={`calc(${height}px - ${currentPadding} - ${currentPadding}  - ${52}px)`}
-                    wrapEnabled={true}
-                    showPrintMargin={false}
-                    highlightActiveLine={false}
-                    showGutter={false}
-                    className="ace-editor-container"
-                    editorProps={{ $blockScrolling: true }}
-                />
+                <div className="input-control w-full ">
+                    <input type="text" placeholder="Title"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        className="w-full leading-loose text-[hlsa(0, 0%, 100%, 0.6)] outline-none font-medium text-center bg-transparent" />
+                </div>
+                <div className="icon flex justify-center items-center p-1 bg-black bg-opacity-50 rounded-sm">
+                    <img src={icon} alt="icon" className="h-8 w-8 rounded-md" />
+                </div>
             </div>
-        </Resizable>
+            <AceEditor
+                value={code}
+                name="UNIQUE_ID_OF_DIV"
+                theme={theme}
+                mode={language.toLocaleLowerCase()}
+                enableBasicAutocompletion={true}
+                fontSize={16}
+                height={`calc(${height}px - ${currentPadding} - ${currentPadding}  - ${52}px)`}
+                wrapEnabled={true}
+                showPrintMargin={false}
+                highlightActiveLine={false}
+                showGutter={false}
+                className="ace-editor-container"
+                editorProps={{ $blockScrolling: true }}
+            />
+        </div>
+        </Resizable >
     )
 }
 
