@@ -66,14 +66,14 @@ const CodeEditor = ({ onCodeChange, language, theme, icon, background, currentPa
             className="resize-container relative"
         >
             <div className="code-block">
-                <div className="code-ttile h-[52px] px-4 flex items-center justify-between bg-black bg-opacity-90">
-                    <div className="dots flex items-center gap-1">
-                        <div className="w-3 h-3 rounded-full bg-inherit bg-[#ff5656]"></div>
-                        <div className="w-3 h-3 rounded-full bg-inherit bg-[#ffbc6a]"></div>
-                        <div className="w-3 h-3 rounded-full bg-inherit bg-[#67f772]"></div>
+                <div className="code-title h-[52px] px-4 flex items-center justify-between bg-black bg-opacity-90">
+                    <div className="dots flex items-center gap-2">
+                        <div className="w-4 h-4 rounded-full bg-[#ff5656]"></div>
+                        <div className="w-4 h-4 rounded-full bg-[#ffbc6a]"></div>
+                        <div className="w-4 h-4 rounded-full bg-[#67f772]"></div>
                     </div>
                     <div className="input-control w-full ">
-                        <input type="text" name="" id=""
+                        <input type="text" name="" id="" placeholder="Title"
                         className="w-full text-[hlsa(0, 0%, 100%, 0.6)] outline-none font-medium text-center bg-transparent" />
                     </div>
                     <div className="icon flex justify-center items-center p-1 bg-black bg-opacity-50 rounded-sm">
