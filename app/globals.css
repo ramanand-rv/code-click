@@ -25,7 +25,7 @@ body {
 }
 
 .ace_editor {
-    background-color: #151c2c !important;
+    /* background-color: #151c2c !important; */
     opacity: 100% !important;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
