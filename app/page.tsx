@@ -27,6 +27,10 @@ export default function Home() {
       // hidden elements
       const handleElements = document.querySelectorAll('.handle');
       handleElements.forEach((element: any) => element.style.display = 'none');
+      
+      const cursorElement = document.querySelector('.ace_cursor') as any;
+      cursorElement.style.display = 'none';
+
       const canvas = await html2canvas(editorElement);
       const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
 
@@ -37,6 +41,7 @@ export default function Home() {
 
       // show elements
       handleElements.forEach((element: any) => element.style.display = 'block');
+      cursorElement.style.display = 'block';
     }
   };
   return (
