@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import CodeEditor from '@/components/CodeEditor'
 import Image from 'next/image'
 import { backgrounds, languages, themes } from '@/utils/utilities';
@@ -9,15 +9,30 @@ import BackgroundSelector from '@/components/BackgroundSelector';
 import PaddingSelector from '@/components/PaddingSelector';
 import { Download } from 'lucide-react';
 import Footer from '@/components/Footer';
+import html2canvas from 'html2canvas';
 
 export default function Home() {
+
   const [language, setLanguage] = useState(languages[0].name);
   const [activeIcon, setActiveIcon] = useState(languages[0].icon);
   const [background, setBackground] = useState(backgrounds[0]);
   const [paddings, setPaddings] = useState(["1rem", "2rem", "3rem", "4rem"]);
   const [currentPadding, setCurrentPadding] = useState(paddings[0]);
-
   const [theme, setTheme] = useState(themes[0]);
+
+  const editorRef = useRef(null);
+  const exportPng =async () => {
+    const editorElement = editorRef.current;
+    if(editorElement){
+      const canvas = await html2canvas(editorElement);
+      const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+
+      const link = document.createElement('a');
+      link.download = 'code-click.png';
+      link.href = image;
+      link.click();
+    }
+  };
   return (
     <main className='h-[100vh] flex flex-col items-center justify-between'>
       <header className=' p-4 mt-6 w-[1000px] fixed top-0 left-1/2 translate-x-[-50%] z-10 bg-[#191919] rounded border-[#3c3c3c] shadow-md flex gap-12 border-2' >
@@ -43,13 +58,14 @@ export default function Home() {
           <div className="export-btn -ml-1 items-center self-center justify-center">
             <button className='py-2 px-3 rounded-md text-sm bg-blue-400 text-blue-400 font-medium bg-opacity-10 
             hover:bg-opacity-90 hover:text-slate-50 ease-in-out transition-all 
-            duration-200 flex items-center gap-3'>
+            duration-200 flex items-center gap-3'
+            onClick={exportPng}>
               <Download />
               Export PNG
             </button>
           </div>
       </header>
-      <div className="codeEditor mt-36 ">
+      <div className="codeEditor mt-36 " ref={editorRef}>
         <CodeEditor
           language={language}
           icon={activeIcon}

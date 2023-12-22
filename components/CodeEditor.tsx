@@ -112,7 +112,7 @@ const CodeEditor = ({ language, theme, icon, background, currentPadding }: CodeE
                         <input type="text" placeholder="Title" 
                         value={title} 
                         onChange={(e) => setTitle(e.target.value)}
-                            className="w-full text-[hlsa(0, 0%, 100%, 0.6)] outline-none font-medium text-center bg-transparent" />
+                            className="w-full leading-loose text-[hlsa(0, 0%, 100%, 0.6)] outline-none font-medium text-center bg-transparent" />
                     </div>
                     <div className="icon flex justify-center items-center p-1 bg-black bg-opacity-50 rounded-sm">
                         <img src={icon} alt="icon" className="h-8 w-8 rounded-md" />
