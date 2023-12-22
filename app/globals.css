@@ -30,7 +30,7 @@ body {
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     /* border-top: none; */
-    /* box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.5); */
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.5);
     border: 2px solid rgba(249, 249, 249, 0.1);
     font-weight: 500 !important;
     font-size: 23px !important;
@@ -79,6 +79,31 @@ body {
 
 }
 
-.social-icons{
-    size: 30px;
+.handle {
+    transition: all 300ms ease-in-out;
+    pointer-events: none;
+}
+
+.resize-container:hover .handle-top {
+    transform: translate(50%) scale(1.5);
+    background: rgb(248, 250, 252);
+    transition: all 300ms ease-in-out;
+}
+
+.resize-container:hover .handle-bottom {
+    transform: translate(50%) scale(1.5);
+    background: rgb(248, 250, 252);
+    transition: all 300ms ease-in-out;
+}
+
+.resize-container:hover .handle-left {
+    transform: translate(50%) scale(1.5);
+    background: rgb(248, 250, 252);
+    transition: all 300ms ease-in-out;
+}
+
+.resize-container:hover .handle-right {
+    transform: translate(50%) scale(1.5);
+    background: rgb(248, 250, 252);
+    transition: all 300ms ease-in-out;
 }

@@ -105,7 +105,7 @@ const CodeEditor = ({ language, theme, icon, background, currentPadding }: CodeE
 
                     <div className="handle handle-bottom absolute left-1/2 bottom-[-4px] translate-x-[50%] w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-50"></div>
 
-                    <div className="handle handle-left absolute top-1/2 left-[-4px] translate-y-[50%] w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-50"></div>
+                    <div className="handle handle-left absolute top-1/2 left-[-7px] translate-x-[50%] w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-50"></div>
 
                     <div className="handle handle-right absolute top-1/2 right-[-2px] translate-x-[50%] w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-50"></div>
 
