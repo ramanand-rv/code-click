@@ -44,12 +44,12 @@ interface CodeEditorProps {
 }
 const CodeEditor = ({ onCodeChange, language, theme, icon, background, currentPadding }: CodeEditorProps) => {
     const [width, setWidth] = useState<string | number>(1000);
-    const [height, setHeight] = useState<string | number>(590);
+    const [height, setHeight] = useState<string | number>(500);
 
     // @ts-ignore
     const handleResize = (event, direction, ref, pos) => {
         const newHeight = ref.style.height;
-        setHeight(parseInt(newHeight));
+        setHeight(parseInt(newHeight, 10));
     };
 
     const updateSize = () => {
@@ -61,7 +61,7 @@ const CodeEditor = ({ onCodeChange, language, theme, icon, background, currentPa
         return () => window.removeEventListener('resize', updateSize);
     }, []);
     return (
-        <Resizable minHeight={590} minWidth={510} maxWidth={1000} defaultSize={{ width: width, height: height || 500 }}
+        <Resizable minHeight={470} minWidth={510} maxWidth={1000} defaultSize={{ width: width, height: height || 500 }}
             onResize={handleResize}
             className="resize-container relative"
             style={
@@ -102,6 +102,7 @@ const CodeEditor = ({ onCodeChange, language, theme, icon, background, currentPa
                     mode={language.toLocaleLowerCase()}
                     enableBasicAutocompletion={true}
                     fontSize={16}
+                    height={`calc(${height}px - ${currentPadding} - ${currentPadding} - ${currentPadding} - ${currentPadding} - ${currentPadding})`}
                     wrapEnabled={true}
                     showPrintMargin={false}
                     highlightActiveLine={false}
