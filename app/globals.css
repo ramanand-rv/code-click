@@ -69,3 +69,16 @@ body {
     border-radius: 3px;
     border: 1px solid #3c3c3c;
 }
+
+.social-icons:hover {
+    transform: scale(2);
+    transition: all;
+    transition: ease-in-out;
+    transition-duration: 200ms;
+    color: rgb(34, 43, 195);
+
+}
+
+.social-icons{
+    size: 30px;
+}
