@@ -2,7 +2,7 @@
 
 import { backgrounds } from '@/utils/utilities';
 import { ChevronDown } from 'lucide-react';
-import React from 'react'
+import React from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
 
 interface BackgroundSelectorProps {

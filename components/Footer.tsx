@@ -1,8 +1,7 @@
 'use client'
 
-import { Github, Instagram, Linkedin, Twitter } from 'lucide-react'
+import { Github, Linkedin, Twitter } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
 
 const Footer = () => {
     return (
