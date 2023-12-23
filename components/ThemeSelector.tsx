@@ -27,7 +27,8 @@ const ThemeSelector = ({ theme, setTheme }: ThemeSelectorProps) => {
         <div className='theme-selector'>
             <p className="text-sm font-medium py-[5px] text-slate-300 overflow-hidden">Theme</p>
 
-            <div onClick={toggleDropdown} className=" p-1 dropdown-title capitalize w-[160px]">
+            <div onClick={toggleDropdown} className=" p-1 dropdown-title capitalize w-[160px]
+            hover:border-slate-500 duration-200 hover:text-white transition-all ease-linear rounded border-slate-700 hover:bg-slate-800">
                 {theme}
                 <ChevronDown />
             </div>

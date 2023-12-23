@@ -52,7 +52,7 @@ body {
     padding: 0.25rem 0.3rem 0.3rem 0.5rem;
     height: 37px;
     border-radius: 3px;
-    border: 1px solid rgba(249, 249, 249, 0.8);
+    border: 1px solid rgb(57, 57, 79);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -84,24 +84,71 @@ body {
 
 .resize-container:hover .handle-top {
     transform: translate(50%) scale(1.5);
-    background: rgb(248, 250, 252);
     transition: all 300ms ease-in-out;
 }
 
 .resize-container:hover .handle-bottom {
     transform: translate(50%) scale(1.5);
-    background: rgb(248, 250, 252);
     transition: all 300ms ease-in-out;
 }
 
 .resize-container:hover .handle-left {
     transform: translate(50%) scale(1.5);
-    background: rgb(248, 250, 252);
     transition: all 300ms ease-in-out;
 }
 
 .resize-container:hover .handle-right {
     transform: translate(50%) scale(1.5);
-    background: rgb(248, 250, 252);
     transition: all 300ms ease-in-out;
+}
+
+.handle {
+    background: linear-gradient(312deg, hsl(92, 100%, 51%), #6d4ef7);
+    background-size: 400% 400%;
+    -webkit-animation: handleAnimation 3s ease infinite;
+    -moz-animation: handleAnimation 3s ease infinite;
+    animation: handleAnimation 3s ease infinite;
+}
+
+
+@-webkit-keyframes handleAnimation {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 51%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes handleAnimation {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 51%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes handleAnimation {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 51%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
 }

@@ -32,7 +32,8 @@ const LanguageSelector = ({ language, setLanguage, setActiveIcon }: LanguageSele
         <OutsideClickHandler onOutsideClick={() => setShowDropdown(false)}>
         <div>
             <p className="text-sm font-medium py-[5px] text-slate-300 overflow-hidden">Languages</p>
-            <div onClick={toggleDropdown} className=" p-1 dropdown-title capitalize w-[105px]">
+            <div onClick={toggleDropdown} className=" p-1 dropdown-title capitalize w-[105px]
+             duration-200 hover:border-slate-500 hover:text-white transition-all ease-linear rounded border-slate-700 hover:bg-slate-800 ">
                 {language}
                 <ChevronDown />
             </div>
@@ -40,7 +41,7 @@ const LanguageSelector = ({ language, setLanguage, setActiveIcon }: LanguageSele
                 <div className='dropdown-menu'>
                     {languages.map((lang, i) => {
                         return (
-                            <div key={i} className=" rounded-md transition duration-75 hover:border-slate-400 
+                            <div key={i} className=" rounded-md transition duration-150 hover:border-slate-400 
                             hover:border-b-2 mt-2 hover:border-r-2 dropdown-item text-left w-[105px] items-center
                             hover:bg-slate-700 flex overflow-hidden">
                                 <button
